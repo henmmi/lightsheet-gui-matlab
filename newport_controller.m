@@ -11,13 +11,11 @@ op_states = 1;
 ConexCC = serialport("COM10",921600);
 configureTerminator(ConexCC,"CR/LF");
 
-goto_NotRef(ConexCC);
-op_states = goto_Ready(op_states,ConexCC);
-wait_ready(ConexCC);
-absolute_move(10,ConexCC);
-wait_ready(ConexCC);
-relative_move(5,ConexCC);
-wait_ready(ConexCC);
+op_states = goto_NotRef(ConexCC);
+op_states = goto_Config(op_states, ConexCC);
+wait_config(ConexCC);
+set_acceleration(1,ConexCC);
+
 
 clear ConexCC
 
