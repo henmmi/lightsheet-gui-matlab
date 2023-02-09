@@ -8,3 +8,7 @@ end
     fprintf('Configuration\n');
     state = 2;
 end
+%             op_states = goto_Config(op_states, ConexCC);
+%             wait_config(ConexCC);
+%             writeline(ConexCC, "1AC20\r\n");
+%             op_states = leave_Config(ConexCC);
