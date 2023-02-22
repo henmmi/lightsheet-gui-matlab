@@ -1,6 +1,5 @@
 imaqreset
-imaqhwinfo('gige')
-
+gigecamlist
 camera_object = gigecam('169.254.223.33');
 video_width = camera_object.Width;
 video_height = camera_object.Height;
