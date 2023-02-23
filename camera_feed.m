@@ -1,2 +1,15 @@
-feed = gigecam('169.254.223.33');
-commands(feed)
+camera_object = webcam('Microsoft® LifeCam HD-3000');
+preview(camera_object);
+folder_name = 'Images';
+destination_folder = strcat(pwd,'/',folder_name) ;
+if ~exist(destination_folder, 'dir')
+    mkdir(destination_folder);
+end
+
+for i = 1:2
+    img = snapshot(camera_object);
+    file_name = strcat(sprintf('Image%d_', i), string(datetime('now','Format', "yyyy-MM-dd-HH-mm-ss")),'.png');
+    full_file_name = fullfile('Images/',file_name);
+    imwrite(img, full_file_name);
+    pause(2)
+end

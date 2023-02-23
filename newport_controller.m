@@ -18,23 +18,6 @@ set_acceleration(1,ConexCC);
 
 
 clear ConexCC
-
-
-%% Changes Operating States 
-
-switch op_states
-    case 1
-        disp('Not Referenced')
-    case 2
-        disp('Config')
-    case 3
-        disp('Homing')
-    case 4
-        disp('Ready')
-    case 5
-        disp('Not Ready')
-    otherwise
-        disp('Waiting')
-end        
+   
 
 

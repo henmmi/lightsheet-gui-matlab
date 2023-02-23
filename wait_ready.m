@@ -1,14 +1,18 @@
 function wait_ready(serial_device)
+
 %Error code for MOVING
-x = 28;
+MOVE_error = hex2dec('1C');
+%Error code for READY
+READY_error = hex2dec('32');
+
 %Loop while error code is below 0x32 (READY)
-while x < 50
+while MOVE_error < READY_error
     writeline(serial_device, "1TS\r\n");
-    x = readline(serial_device);
-    x = char(x);
-    x = x(end-1:end);
-%     disp(x)
-    x = hex2dec(x);
+    MOVE_error = readline(serial_device);
+    
+    MOVE_error = char(MOVE_error);
+    MOVE_error = MOVE_error(end-1:end);
+    MOVE_error = hex2dec(MOVE_error);
     pause(0.1)
 end
 end
