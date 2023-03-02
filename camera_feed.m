@@ -1,4 +1,4 @@
-camera_object = webcam('Microsoft® LifeCam HD-3000');
+camera_object = webcam('Integrated Camera');
 preview(camera_object);
 folder_name = 'Images';
 destination_folder = strcat(pwd,'/',folder_name) ;
@@ -12,4 +12,5 @@ for i = 1:2
     full_file_name = fullfile('Images/',file_name);
     imwrite(img, full_file_name);
     pause(2)
-end
+    endls
+    
